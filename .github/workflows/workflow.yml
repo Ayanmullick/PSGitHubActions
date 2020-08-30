@@ -2,16 +2,11 @@ name: PSGitHubActions Workflow
 
 on: [workflow_dispatch]
 
-jobs:
-      
-  # Create resource group in Azure
+jobs:      
   RGCreate:
     runs-on: windows-latest
 
     steps:
-    # checkout code from repo
-    - name: checkout repo
-      uses: actions/checkout@v1
-
+    - uses: actions/checkout@v1
     - name: create resource group
       run: powershell .\AzPS\RGcreation.ps1

@@ -7,7 +7,7 @@ on: [workflow_dispatch]
 
 jobs:
       
-  # Deploy VM in Azure
+  # Create resource group in Azure
   DeployVM:
     runs-on: windows-latest
 
@@ -21,4 +21,4 @@ jobs:
         ls '${{ env.OUTPUT_PATH }}\AzPS'
     - name: create resource group
       run: >
-        powershell -command "& '${{ env.OUTPUT_PATH }}\IaC\AzCLI\RGcreation.ps1'"
+        powershell -command "& '${{ env.OUTPUT_PATH }}\AzPS\RGcreation.ps1'" 

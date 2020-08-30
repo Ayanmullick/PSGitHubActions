@@ -1,0 +1,24 @@
+name: PSGitHubActions Workflow
+
+env:
+  OUTPUT_PATH: ${{ github.workspace }}
+
+on: [workflow_dispatch]
+
+jobs:
+      
+  # Deploy VM in Azure
+  DeployVM:
+    runs-on: windows-latest
+
+    steps:
+    # checkout code from repo
+    - name: checkout repo
+      uses: actions/checkout@v1
+
+    - name: look for ps1 file
+      run: |
+        ls '${{ env.OUTPUT_PATH }}\AzPS'
+    - name: create resource group
+      run: >
+        powershell -command "& '${{ env.OUTPUT_PATH }}\IaC\AzCLI\RGcreation.ps1'"

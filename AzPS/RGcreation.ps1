@@ -1,5 +1,5 @@
 $Secret = ConvertTo-SecureString -String 'Passw0rd' -AsPlainText -Force
-$pscredential = New-Object -TypeName System.Management.Automation.PSCredential('0416e2ab-5d3a-4ae5-9b90-e658659d792a',$Secret)
+$pscredential = New-Object -TypeName System.Management.Automation.PSCredential('29396ed6-d65a-4886-80e9-eb4889bb25d3',$Secret)
 
 Install-Module -Name Az.Accounts,Az.Resources -Force -SkipPublisherCheck -AllowClobber -Verbose
 Import-Module Az.Accounts,Az.Resources -Verbose

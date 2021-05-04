@@ -1,19 +1,16 @@
+name: PSGitHubActionsWorkflowV2
 on: [workflow_dispatch]
-
-name: AzurePowerShellSample
-
-jobs:
-
-  build:
-    runs-on: ubuntu-latest
+jobs:      
+  TestPSGitHubActions:
+    runs-on: windows-latest
     steps:
     
     - name: Login via Az module
       uses: azure/login@v1
       with:
-        creds: ${{secrets.SECRETV2}}
+        creds: ${{secrets.SECRET}}
         enable-AzPSSession: true 
-        
+    
     - name: Run Azure PowerShell script
       uses: azure/powershell@v1
       with:

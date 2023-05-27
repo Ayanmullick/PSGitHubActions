@@ -8,7 +8,7 @@ jobs:
     - name: query resource group
       run: |
         .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}
-  shell: pwsh
+      shell: pwsh
 
 
 

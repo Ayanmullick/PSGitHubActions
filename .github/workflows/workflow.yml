@@ -2,8 +2,8 @@ name: PSGitHubActions Workflow
 on: [workflow_dispatch]
 jobs:      
   RGQuery:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v1
     - name: query resource group
-      run: powershell .\AzPS\RGquery.ps1
+      run: pwsh .\AzPS\RGquery.ps1

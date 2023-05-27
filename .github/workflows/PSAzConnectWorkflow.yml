@@ -12,5 +12,5 @@ jobs:
       
 
 
-
+#  "${{ vars.VAR }}"     #quotes not needed
 #  run: pwsh .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}  #Works too

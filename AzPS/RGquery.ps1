@@ -7,4 +7,10 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant 1054d918-a
 Get-AzResourceGroup |ft
 #>
 
-Write-Output "$`{{ vars.VAR }}" # "$`{{ secrets.PSGITHUBACTIONSV2_SPN_PSWD }}"  #Not working
+#Write-Output "$`{{ vars.VAR }}" # "$`{{ secrets.PSGITHUBACTIONSV2_SPN_PSWD }}"  #Not working
+
+param (
+  [string]$my_var # Define the parameter
+)
+
+Write-Host "The value of MY_VAR is $my_var"

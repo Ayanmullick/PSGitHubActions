@@ -6,10 +6,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: query resource group
+      shell: pwsh
       run: |
         .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}
-      shell: pwsh
+      
 
 
 
-    #  run: pwsh .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}
+#  run: pwsh .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}  #Works too

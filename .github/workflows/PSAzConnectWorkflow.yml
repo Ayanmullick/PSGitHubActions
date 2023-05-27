@@ -1,11 +1,11 @@
 name: GHActions PSAzConnect Workflow
 on: [workflow_dispatch]
 jobs:      
-  AzConnectionTest:
+  AzConnectionJob:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
-    - name: query resource group
+    - name: AzConnectionStep
       shell: pwsh
       run: |
         .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}

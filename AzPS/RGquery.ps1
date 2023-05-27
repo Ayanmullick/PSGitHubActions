@@ -7,4 +7,4 @@ Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant 1054d918-a
 Get-AzResourceGroup |ft
 #>
 
-Write-Output "$`{{secrets.PSGITHUBACTIONSV2_SPN_PSWD}}"
+Write-Output "$`{{ secrets.PSGITHUBACTIONSV2_SPN_PSWD }}"

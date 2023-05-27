@@ -6,4 +6,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: query resource group
-      run: pwsh .\AzPS\RGquery.ps1 "${{ secrets.PSGITHUBACTIONSV2_SPN_PSWD }}"
+      run: pwsh .\AzPS\RGquery.ps1 "${{ vars.VAR }}"

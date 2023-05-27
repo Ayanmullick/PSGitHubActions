@@ -10,7 +10,15 @@ Get-AzResourceGroup |ft
 #Write-Output "$`{{ vars.VAR }}" # "$`{{ secrets.PSGITHUBACTIONSV2_SPN_PSWD }}"  #Not working
 
 #One can consume a repo variable as a script parameter in GHActions workflow. But a secret shows up as '***'
-param ( [string]$my_var ) # Define the parameter
+param ( $my_var ) # Define the parameter
 Write-Host "The value of MY_VAR is $my_var"
 #>
+<#
+param ( $TenantId, $SubscriptionId, $ClientId, $ClientPswd )
 
+$Secret = ConvertTo-SecureString -String $ClientPswd -AsPlainText -Force -Verbose
+$pscredential = New-Object -TypeName System.Management.Automation.PSCredential($ClientId,$Secret)
+
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $TenantId -Subscription $SubscriptionId
+Get-AzResourceGroup |ft
+#>

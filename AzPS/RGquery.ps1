@@ -9,6 +9,7 @@ Get-AzResourceGroup |ft
 
 #Write-Output "$`{{ vars.VAR }}" # "$`{{ secrets.PSGITHUBACTIONSV2_SPN_PSWD }}"  #Not working
 
+#One can consume a repo variable as a script parameter in GHActions workflow. But a secret shows up as '***'
 param (
   [string]$my_var # Define the parameter
 )

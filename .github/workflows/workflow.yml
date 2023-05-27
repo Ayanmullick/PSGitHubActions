@@ -5,5 +5,5 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v1
-    - name: create resource group
-      run: powershell .\AzPS\RGcreation.ps1
+    - name: query resource group
+      run: powershell .\AzPS\RGquery.ps1

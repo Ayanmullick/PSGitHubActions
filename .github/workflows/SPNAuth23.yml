@@ -1,7 +1,7 @@
 name: SPNAuth23
 on: [workflow_dispatch]
 jobs:
-  TestPSGitHubActions:
+  SPNAuth23:
     runs-on: windows-latest
     steps:    
             - name: Login via Az module

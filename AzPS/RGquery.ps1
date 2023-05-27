@@ -12,3 +12,5 @@ Get-AzResourceGroup |ft
 #One can consume a repo variable as a script parameter in GHActions workflow. But a secret shows up as '***'
 param ( [string]$my_var ) # Define the parameter
 Write-Host "The value of MY_VAR is $my_var"
+#>
+

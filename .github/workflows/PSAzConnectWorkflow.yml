@@ -7,8 +7,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: AzConnectionStep
       shell: pwsh
-      run: |
-        .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}
+      run: .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}
       
 
 

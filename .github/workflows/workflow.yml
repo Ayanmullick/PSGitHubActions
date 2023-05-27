@@ -4,6 +4,6 @@ jobs:
   RGQuery:
     runs-on: windows-latest
     steps:
-    - uses: Azure/powershell@v1
+    - uses: actions/checkout@v2
     - name: query resource group
       run: pwsh .\AzPS\RGquery.ps1

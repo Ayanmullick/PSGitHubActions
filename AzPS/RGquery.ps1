@@ -1,4 +1,4 @@
-Install-Module -Name Az.Accounts,Az.Resources -Force -SkipPublisherCheck #Is needed since github hosted windows images don't have az modules pre-installed
+
 <#
 $Secret = ConvertTo-SecureString -String "$`{{secrets.PSGITHUBACTIONSV2_SPN_PSWD}}" -AsPlainText -Force -Verbose #Unable to consume secret from repo settings
 $pscredential = New-Object -TypeName System.Management.Automation.PSCredential('865d9db9-7a02-4bf2-9b7b-33d108f42da5',$Secret)
@@ -15,6 +15,8 @@ Write-Host "The value of MY_VAR is $my_var"
 #>
 #
 param ( $TenantId, $SubscriptionId, $ClientId, $ClientPswd )
+
+Install-Module -Name Az.Accounts,Az.Resources -Force -SkipPublisherCheck #Is needed since github hosted windows images don't have az modules pre-installed
 
 $Secret = ConvertTo-SecureString -String $ClientPswd -AsPlainText -Force -Verbose
 $pscredential = New-Object -TypeName System.Management.Automation.PSCredential($ClientId,$Secret)

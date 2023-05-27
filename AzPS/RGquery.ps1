@@ -1,3 +1,5 @@
+Install-Module -Name Az.Accounts,Az.Resources -Force -SkipPublisherCheck 
+
 $Secret = ConvertTo-SecureString -String "$`{{secrets.PSGITHUBACTIONSV2_SPN_PSWD}}" -AsPlainText -Force -Verbose
 $pscredential = New-Object -TypeName System.Management.Automation.PSCredential('865d9db9-7a02-4bf2-9b7b-33d108f42da5',$Secret)
 

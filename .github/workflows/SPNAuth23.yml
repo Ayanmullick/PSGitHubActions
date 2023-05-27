@@ -7,7 +7,7 @@ jobs:
             - name: Login via Az module
               uses: azure/login@v1
               with:
-                creds: ${{secrets.SpnAuthLinux}}
+                creds: ${{secrets.PSGitHubActionsv2JSONSecret}}
                 enable-AzPSSession: true 
 
             - name: Run Azure PowerShell script

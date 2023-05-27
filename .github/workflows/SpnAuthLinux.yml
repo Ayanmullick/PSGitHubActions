@@ -1,0 +1,18 @@
+on: [workflow_dispatch]
+name: SpnAuthLinux
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:    
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.SECRET23}}
+        enable-AzPSSession: true 
+        
+    - name: Run AzPS script
+      uses: azure/powershell@v1
+      with:
+        inlineScript: |
+          Get-AzResourceGroup|FT
+        azPSVersion: 'latest'

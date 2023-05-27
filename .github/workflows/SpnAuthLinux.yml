@@ -1,13 +1,13 @@
 on: [workflow_dispatch]
 name: SpnAuthLinux
 jobs:
-  build:
+  SpnAuthLinux:
     runs-on: ubuntu-latest
     steps:    
     - name: Login via Az module
       uses: azure/login@v1
       with:
-        creds: ${{secrets.SECRET23}}
+        creds: ${{secrets.PSGitHubActionsv2JSONSecret}}
         enable-AzPSSession: true 
         
     - name: Run AzPS script

@@ -1,8 +1,8 @@
 name: PSGitHubActions Workflow
 on: [workflow_dispatch]
 jobs:      
-  RGCreate:
-    runs-on: windows-latest
+  RGQuery:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: query resource group

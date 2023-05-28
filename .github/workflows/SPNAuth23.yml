@@ -13,10 +13,11 @@ jobs:
     - name: Run Azure PowerShell script
       uses: azure/powershell@v1
       with:
-        run: .\AzPS\RGquery.ps1
-        shell: pwsh
+        inlineScript: .\RGquery.ps1
         azPSVersion: 'latest'
 
 
 # inlineScript: Get-AzResourceGroup|FT       #Works  
 # ./AzPS/RGquery.ps1  #forward slash
+
+# Run and shell don't work. Error: Unexpected input(s) 'run', 'shell', valid inputs are ['inlineScript', 'azPSVersion', 'errorActionPreference', 'failOnStandardError', 'githubToken']

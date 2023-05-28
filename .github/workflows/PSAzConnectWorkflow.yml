@@ -15,6 +15,6 @@ jobs:
 # run: pwsh .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}  #Works too
 # run: .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}  #Works if shell is added
 
-# run: .\AzPS\RGquery.ps1  ${{ vars.TenantId }} ${{ vars.SubscriptionId }} ${{ vars.ClientId }} ${{secrets.PSGitHubActionsv2_SPN_PSWD}}  #Worked
+# run: .\AzPS\RGquery.ps1  ${{ vars.TenantId }} ${{ vars.SubscriptionId }} ${{ vars.ClientId }} ${{secrets.PSGitHubActionsv2_SPN_PSWD}}  #Working version
 
-# run: .\AzPS\RGquery.ps1  @${{ vars.AZCONNECT }} -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}}  #Didn't work
+# run: .\AzPS\RGquery.ps1  @${{ vars.AZCONNECT }} -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}}  #Splatting Didn't work

@@ -7,7 +7,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: AzConnectionStep
       shell: pwsh
-      run: .\AzPS\RGquery.ps1 ${{ vars.TenantId }} ${{ vars.SubscriptionId }} ${{ vars.ClientId }} ${{secrets.PSGitHubActionsv2_SPN_PSWD}}
+      run: .\AzPS\RGquery.ps1 @${{ vars.AZCONNECT }} -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}}
       
       
 

@@ -13,7 +13,7 @@ jobs:
     - name: Run Azure PowerShell script
       uses: azure/powershell@v1
       with:
-        inlineScript: ./RGquery.ps1
+        inlineScript: ./scripts/RGquery.ps1
         azPSVersion: 'latest'
 
 

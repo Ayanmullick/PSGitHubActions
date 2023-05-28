@@ -13,12 +13,12 @@ jobs:
     - name: Run Azure PowerShell script
       uses: azure/powershell@v1
       with:
-        inlineScript: |
-          ./scripts/RGquery.ps1
+        inlineScript: Get-AzResourceGroup|FT
         azPSVersion: 'latest'
 
 
 # inlineScript: Get-AzResourceGroup|FT       #Works  
-# ./AzPS/RGquery.ps1  #forward slash
+# ./AzPS/RGquery.ps1  #forward slash didn't work
+# The term './scripts/RGquery.ps1' is not recognized as a name of a cmdlet
 
 # Run and shell don't work. Error: Unexpected input(s) 'run', 'shell', valid inputs are ['inlineScript', 'azPSVersion', 'errorActionPreference', 'failOnStandardError', 'githubToken']

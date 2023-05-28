@@ -4,15 +4,14 @@ jobs:
   SPNAuth23:
     runs-on: windows-latest
     steps:    
-            - name: Login via Az module
-              uses: azure/login@v1
-              with:
-                creds: ${{secrets.PSGitHubActionsv2JSONSecret}}
-                enable-AzPSSession: true 
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.PSGitHubActionsv2JSONSecret}}
+        enable-AzPSSession: true 
 
-            - name: Run Azure PowerShell script
-              uses: azure/powershell@v1
-              with:
-                inlineScript: |
-                  Get-AzResourceGroup|FT
-                azPSVersion: 'latest'
+    - name: Run Azure PowerShell script
+      uses: azure/powershell@v1
+      with:
+        inlineScript: Get-AzResourceGroup|FT
+        azPSVersion: 'latest'

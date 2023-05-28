@@ -16,6 +16,7 @@ jobs:
 # run: .\AzPS\RGquery.ps1  ${{ fromJson(vars.AZCONNECT).clientId }}  #Works if shell is added
 
 # run: .\AzPS\RGquery.ps1  ${{ vars.TenantId }} ${{ vars.SubscriptionId }} ${{ vars.ClientId }} ${{secrets.PSGitHubActionsv2_SPN_PSWD}}  #Working version
+#params and the variable sequence need to match
 
 # run: .\AzPS\RGquery.ps1  @${{ vars.AZCONNECT }} -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}}  #Splatting Didn't work
 # Error: Exception calling ".ctor" with "2" argument(s): "Cannot process argument because the value of argument

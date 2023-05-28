@@ -24,3 +24,5 @@ jobs:
 
 # run: .\AzPS\RGquery.ps1 ([hashtable]${{ vars.AzConnect }}) -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}} 
 # Error: Cannot convert the value of type  "System.Management.Automation.ScriptBlock" to type "System.Collections.Hashtable".
+
+# ConvertFrom-Json -AsHashtable

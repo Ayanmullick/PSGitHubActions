@@ -13,5 +13,8 @@ jobs:
     - name: Run AzPS script
       uses: azure/powershell@v1
       with:
-        inlineScript: .\scripts\RGquery.ps1
+        inlineScript: Get-AzResourceGroup|FT
         azPSVersion: 'latest'
+
+
+# inlineScript: .\scripts\RGquery.ps1. Error:  The term '.\scripts\RGquery.ps1' is not recognized as a name of a cmdlet | For both slashes       

@@ -14,11 +14,11 @@ param ( $my_var ) # Define the parameter
 Write-Host "The value of MY_VAR is $my_var"
 #>
 #
-param ( $TenantId, $SubscriptionId, $ClientId, $ClientPswd )
+param ( $TenantId, $SubscriptionId, $ClientId, $SPNPswd )
 
 Install-Module -Name Az.Accounts,Az.Resources -Force -SkipPublisherCheck #Is needed since github hosted windows images don't have az modules pre-installed
 
-$Secret = ConvertTo-SecureString -String $ClientPswd -AsPlainText -Force -Verbose
+$Secret = ConvertTo-SecureString -String $SPNPswd -AsPlainText -Force -Verbose
 $pscredential = New-Object -TypeName System.Management.Automation.PSCredential($ClientId,$Secret)
 
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $TenantId -Subscription $SubscriptionId

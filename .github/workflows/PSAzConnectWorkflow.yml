@@ -7,7 +7,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: AzConnectionStep
       shell: pwsh
-      run: .\AzPS\RGquery.ps1 ([hashtable]${{ vars.AzConnect }}) -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}}
+      run: .\AzPS\RGquery.ps1 ${{ vars.TenantId }} ${{ vars.SubscriptionId }} ${{ vars.ClientId }} ${{secrets.PSGitHubActionsv2_SPN_PSWD}}
       
       
 
@@ -20,3 +20,6 @@ jobs:
 # run: .\AzPS\RGquery.ps1  @${{ vars.AZCONNECT }} -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}}  #Splatting Didn't work
 # Error: Exception calling ".ctor" with "2" argument(s): "Cannot process argument because the value of argument
 #     | "userName" is not valid. Change the value of the "userName" argument and run the operation again."
+
+# run: .\AzPS\RGquery.ps1 ([hashtable]${{ vars.AzConnect }}) -SPNPswd ${{secrets.PSGitHubActionsv2_SPN_PSWD}} 
+# Error: Cannot convert the value of type  "System.Management.Automation.ScriptBlock" to type "System.Collections.Hashtable".

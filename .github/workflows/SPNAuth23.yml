@@ -13,8 +13,9 @@ jobs:
     - name: Run Azure PowerShell script
       uses: azure/powershell@v1
       with:
-        inlineScript: ./AzPS/RGquery.ps1  #forward slash
+        inlineScript: gci -recurse
         azPSVersion: 'latest'
 
 
 # inlineScript: Get-AzResourceGroup|FT       #Works  
+# ./AzPS/RGquery.ps1  #forward slash

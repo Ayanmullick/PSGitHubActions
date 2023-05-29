@@ -1,11 +1,11 @@
-name: AzPScontainer
+name: AzPScontainerAction
 on: [workflow_dispatch]
 
 jobs:
-  build:
+  AzPSimage:
     runs-on: ubuntu-latest
     steps:
-    - name: Run Azure PowerShell command
+    - name: Azure PowerShell command
       uses: docker://mcr.microsoft.com/azure-powershell:latest
       with:
         entrypoint: pwsh

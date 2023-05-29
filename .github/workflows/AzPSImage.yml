@@ -11,7 +11,10 @@ jobs:
           
     steps:
       - name: AzPowerShellStep
-        run: pwsh -Command "& {Set-Location ${{ github.workspace }}; .\scripts\RGquery.ps1}"
+        uses: azure/powershell@v1
+        with:
+          inlineScript: pwsh -Command "& {Set-Location ${{ github.workspace }}; .\scripts\RGquery.ps1}"
+          azPSVersion: 'latest'
 
 
 

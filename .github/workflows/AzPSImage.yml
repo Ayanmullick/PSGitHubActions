@@ -9,7 +9,7 @@ jobs:
       options: --mount type=bind,source=${{ github.workspace }},target=/github/workspace
     steps:
     - name: Run Azure PowerShell script
-      run: pwsh -File /github/workspace/scripts/RGquery.ps1
+      run: pwsh -Command ls -l
 
 
 # Works

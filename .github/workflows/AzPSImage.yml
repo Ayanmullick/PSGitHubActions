@@ -6,10 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/azure-powershell:latest
+      volumes:
+        - ${{ github.workspace }}:/github/workspace
           
     steps:
       - name: AzPowerShellStep
-        run: pwsh -Command "Get-Process; Get-Module -ListAvailable|FT"
+        run: pwsh -Command "Get-ChildItem -Recurse; Get-Volume; Get-Module -ListAvailable|FT"
 
 
 

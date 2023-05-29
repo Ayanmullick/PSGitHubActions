@@ -9,7 +9,7 @@ jobs:
             uses: docker://mcr.microsoft.com/azure-powershell:latest
             with:
               entrypoint: pwsh
-              args: -Command Get-Module -ListAvailable
+              args: -Command "Get-Process; Get-Module -ListAvailable"
 
 
 

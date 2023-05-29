@@ -2,14 +2,14 @@ name: AzPScontainerAction
 on: [workflow_dispatch]
 
 jobs:
-        AzPSimageJob:
-          runs-on: ubuntu-latest
-          steps:
-          - name: AzPowerShellStep
-            uses: docker://mcr.microsoft.com/azure-powershell:latest
-            with:
-              entrypoint: pwsh
-              args: -Command "Get-Process; Get-Module -ListAvailable|FT"
+  AzPSimageJob:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/azure-powershell:latest
+          
+    steps:
+      - name: AzPowerShellStep
+        run: pwsh -Command "Get-Process; Get-Module -ListAvailable|FT"
 
 
 

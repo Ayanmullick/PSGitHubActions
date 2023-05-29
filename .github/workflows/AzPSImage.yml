@@ -11,7 +11,7 @@ jobs:
           
     steps:
       - name: AzPowerShellStep
-        run: pwsh -File ./github/workspace/scripts/RGquery.ps1
+        run: pwsh -Command "cd\ ; dir" 
 
 
 

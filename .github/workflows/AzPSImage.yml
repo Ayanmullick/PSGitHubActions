@@ -1,4 +1,4 @@
-name: Azure PowerShell Workflow
+name: AzPScontainer
 on: [workflow_dispatch]
 
 jobs:

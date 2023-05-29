@@ -4,15 +4,13 @@ on: [workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: mcr.microsoft.com/azure-powershell:latest
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
     - name: Run Azure PowerShell script
-      uses: docker://mcr.microsoft.com/azure-powershell:latest
-      with:
-        entrypoint: pwsh
-        args: -File ./scripts/RGquery.ps1
-        working-directory: ${{ github.workspace }}
+      run: pwsh -File ./scripts/RGquery.ps1
+
 
 
 # Works

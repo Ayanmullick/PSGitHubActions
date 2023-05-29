@@ -2,14 +2,14 @@ name: AzPScontainerAction
 on: [workflow_dispatch]
 
 jobs:
-  AzPSimageJob:
+  build:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/azure-powershell:latest
+      options: --mount type=bind,source=${{ github.workspace }},target=/github/workspace
     steps:
-    - name: AzPowerShellStep
-      uses: docker://mcr.microsoft.com/azure-powershell:latest
-      with:
-        entrypoint: pwsh
-        args: -Command ls -l ./scripts
+    - name: Run Azure PowerShell script
+      run: pwsh -File /github/workspace/scripts/RGquery.ps1
 
 
 # Works

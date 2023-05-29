@@ -27,10 +27,10 @@ jobs:
 #            args: -Command Get-Process 
 #----------------
 
-#       args: -File ./scripts/RGquery.ps1  #The argument './scripts/RGquery.ps1' is not recognized as the name of a script file.
+#       args: -File ./scripts/RGquery.ps1  #The argument './scripts/RGquery.ps1' is not recognized as the name of a script file.  #4
 
 
-#       run: pwsh -Command ls -l  #Doesn't show the repository mounted      
+#       run: pwsh -Command ls -l  #Doesn't show the repository mounted     #5 
 
 #----Run8: Fails to mount
 #jobs:
@@ -53,3 +53,15 @@ jobs:
 #        args: -File ./scripts/RGquery.ps1
 #      working-directory: ${{ github.workspace }}
 #---
+
+#6  Mount options
+#  jobs:
+#    build:
+#      runs-on: ubuntu-latest
+#      container:
+#        image: mcr.microsoft.com/azure-powershell:latest
+#        options: --mount type=bind,source=${{ github.workspace }},target=/github/workspace
+#      steps:
+#      - name: Run Azure PowerShell script
+#        run: pwsh -File /github/workspace/scripts/RGquery.ps1  
+#-----------

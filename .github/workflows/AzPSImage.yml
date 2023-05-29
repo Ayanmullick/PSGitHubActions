@@ -9,7 +9,7 @@ jobs:
       uses: docker://mcr.microsoft.com/azure-powershell:latest
       with:
         entrypoint: pwsh
-        args: -Command .\scripts\RGquery.ps1
+        args: -File ./scripts/RGquery.ps1
 
 
 # Works

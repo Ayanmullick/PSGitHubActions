@@ -7,7 +7,7 @@ jobs:
     container:
       image: mcr.microsoft.com/azure-powershell:latest
       volumes:
-        - ${{ github.workspace }}:/github/workspace
+        - ${{ github.workspace }}:/github
           
     steps:
       - name: AzPowerShellStep

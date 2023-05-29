@@ -15,11 +15,41 @@ jobs:
 
 
 
-# Works
-#       entrypoint: pwsh
-#       args: -Command Get-Process   
+# Works------------
+#   jobs:
+#      AzPSimageJob:
+#        runs-on: ubuntu-latest
+#        steps:
+#        - name: AzPowerShellStep
+#          uses: docker://mcr.microsoft.com/azure-powershell:latest
+#          with:
+#            entrypoint: pwsh
+#            args: -Command Get-Process 
+#----------------
 
 #       args: -File ./scripts/RGquery.ps1  #The argument './scripts/RGquery.ps1' is not recognized as the name of a script file.
 
 
 #       run: pwsh -Command ls -l  #Doesn't show the repository mounted      
+
+#----Run8: Fails to mount
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    container:
+#      image: mcr.microsoft.com/azure-powershell:latest
+#      volumes:
+#        - ${{ github.workspace }}:/github/workspace
+#    steps:
+#    - name: Run Azure PowerShell script
+#      run: pwsh -File /github/workspace/scripts/RGquery.ps1
+#----
+
+
+#9    Same error
+#      uses: docker://mcr.microsoft.com/azure-powershell:latest
+#      with:
+#        entrypoint: pwsh
+#        args: -File ./scripts/RGquery.ps1
+#      working-directory: ${{ github.workspace }}
+#---

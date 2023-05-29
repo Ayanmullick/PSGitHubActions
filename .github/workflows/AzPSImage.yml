@@ -17,3 +17,6 @@ jobs:
 #       args: -Command Get-Process   
 
 #       args: -File ./scripts/RGquery.ps1  #The argument './scripts/RGquery.ps1' is not recognized as the name of a script file.
+
+
+#       run: pwsh -Command ls -l  #Doesn't show the repository mounted      

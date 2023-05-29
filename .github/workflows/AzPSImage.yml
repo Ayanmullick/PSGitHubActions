@@ -6,10 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/azure-powershell:latest
-      options: --mount type=bind,source=${{ github.workspace }},target=/github/workspace
+      volumes:
+        - ${{ github.workspace }}:/github/workspace
     steps:
     - name: Run Azure PowerShell script
-      run: pwsh -Command ls -l
+      run: pwsh -File /github/workspace/scripts/RGquery.ps1
 
 
 # Works

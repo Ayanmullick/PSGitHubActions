@@ -11,7 +11,7 @@ jobs:
           
     steps:
       - name: AzPowerShellStep
-        run: pwsh -Command "cd\ ; cd github; Get-childItem -Recurse|select FullName" 
+        run: pwsh -File ${{ github.workspace }}/scripts/RGquery.ps1
 
 
 

@@ -10,3 +10,8 @@ jobs:
       with:
         entrypoint: pwsh
         args: -Command Get-Process
+
+
+# Works
+#       entrypoint: pwsh
+#       args: -Command Get-Process        

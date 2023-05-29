@@ -11,7 +11,7 @@ jobs:
           
     steps:
       - name: AzPowerShellStep
-        run: pwsh -Command "cd\ ; cd github" 
+        run: pwsh -Command "cd\ ; cd github; dir" 
 
 
 

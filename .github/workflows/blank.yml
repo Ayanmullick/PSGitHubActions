@@ -1,0 +1,12 @@
+name: Azure PowerShell Workflow
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Azure PowerShell command
+      uses: docker://mcr.microsoft.com/azure-powershell:latest
+      with:
+        entrypoint: pwsh
+        args: -Command Get-Process

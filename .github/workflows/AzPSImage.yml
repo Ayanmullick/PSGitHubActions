@@ -9,9 +9,11 @@ jobs:
       uses: docker://mcr.microsoft.com/azure-powershell:latest
       with:
         entrypoint: pwsh
-        args: -File ./scripts/RGquery.ps1
+        args: -Command ls -l ./scripts
 
 
 # Works
 #       entrypoint: pwsh
-#       args: -Command Get-Process        
+#       args: -Command Get-Process   
+
+#       args: -File ./scripts/RGquery.ps1  #The argument './scripts/RGquery.ps1' is not recognized as the name of a script file.

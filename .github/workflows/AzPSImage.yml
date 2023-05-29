@@ -11,7 +11,7 @@ jobs:
           
     steps:
       - name: AzPowerShellStep
-        run: pwsh -Command "Get-ChildItem -Recurse; Get-Volume; Get-Module -ListAvailable|FT"
+        run: pwsh -File ./github/workspace/scripts/RGquery.ps1
 
 
 
@@ -19,9 +19,10 @@ jobs:
 #   jobs:
 #      AzPSimageJob:
 #        runs-on: ubuntu-latest
+#        container:
+#          image: mcr.microsoft.com/azure-powershell:latest
 #        steps:
 #        - name: AzPowerShellStep
-#          uses: docker://mcr.microsoft.com/azure-powershell:latest
 #          with:
 #            entrypoint: pwsh
 #            args: -Command "Get-Process; Get-Module -ListAvailable|FT" 

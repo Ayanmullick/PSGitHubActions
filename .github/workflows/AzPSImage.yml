@@ -2,16 +2,14 @@ name: AzPScontainerAction
 on: [workflow_dispatch]
 
 jobs:
-  run_script:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run script
-        run: |
-          docker run --rm -v $PWD:/scripts -w /scripts/scripts mcr.microsoft.com/azure-powershell:latest pwsh ./RGquery.ps1
+        AzPSimageJob:
+          runs-on: ubuntu-latest
+          steps:
+          - name: AzPowerShellStep
+            uses: docker://mcr.microsoft.com/azure-powershell:latest
+            with:
+              entrypoint: pwsh
+              args: -Command Get-AzResourceGroup 
 
 
 

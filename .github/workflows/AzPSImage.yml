@@ -69,3 +69,13 @@ jobs:
 #      - name: Run Azure PowerShell script
 #        run: pwsh -File /github/workspace/scripts/RGquery.ps1  
 #-----------
+
+# run: pwsh -Command "& {Set-Location ${{ github.workspace }}; .\scripts\RGquery.ps1}"
+# Set-Location: Cannot find path '/home/runner/work/PSGitHubActions/PSGitHubActions' because it does not exist.  
+
+# run: pwsh -File ${{ github.workspace }}/scripts/RGquery.ps1
+# /home/runner/work/PSGitHubActions/PSGitHubActions/scripts/RGquery.ps1
+
+
+#  -Command "cd\ ; cd github; Get-childItem -Recurse|select FullName" 
+
